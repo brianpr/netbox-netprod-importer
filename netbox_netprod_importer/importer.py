@@ -131,6 +131,7 @@ class DeviceImporter(ContextDecorator):
         return props
 
     def get_interfaces(self):
+        logger.debug("bha:Get interfaces")
         assert self.device.device
 
         napalm_interfaces = self.device.get_interfaces()

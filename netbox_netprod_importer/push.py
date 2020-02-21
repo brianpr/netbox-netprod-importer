@@ -115,6 +115,7 @@ class NetboxDevicePropsPusher(_NetboxPusher):
         interfaces = {}
 
         for if_name, if_prop in interfaces_props.items():
+            logger.debug("bha:intefaces_loop")
             if_prop = if_prop.copy()
             if_prop["type"] = self.search_value_in_choices(
                 "dcim_choices", "interface:type", if_prop["type"]
@@ -124,6 +125,8 @@ class NetboxDevicePropsPusher(_NetboxPusher):
             )
             try:
                 interface = next(interface_query)
+
+                logger.debug("bha:interface: %s.", interface)
             except StopIteration:
                 try:
                     interface = self._mappers["interfaces"].post(
