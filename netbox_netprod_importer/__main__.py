@@ -106,7 +106,7 @@ def parse_args():
             logging.getLogger().setLevel(numeric_level)
 
         args.creds = _get_creds(args)
-        print("Initializing importers…")
+        print("bha:Initializing importers…")
         if args.devices:
             args.importers = parse_devices_yaml_def(
                 args.devices, args.creds
