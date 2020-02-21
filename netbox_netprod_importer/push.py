@@ -126,7 +126,7 @@ class NetboxDevicePropsPusher(_NetboxPusher):
             try:
                 interface = next(interface_query)
 
-                logger.debug("bha:interface: %s.", interface)
+                # logger.debug("bha:interface: %s.", interface)
             except StopIteration:
                 try:
                     interface = self._mappers["interfaces"].post(
